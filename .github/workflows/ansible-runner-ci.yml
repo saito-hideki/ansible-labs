@@ -27,7 +27,7 @@ jobs:
       run: sudo chmod 600 chapter6/CI/project/ssh-key.pem
 
     - name: Run Ansible Runner
-      run: cd chapter6/CI/project && ansible-runner run --ident my_identifier --process-isolation --container-image ${{ secrets.EE_NAME }} -p nginx-deployment-playbook.yml .
+      run: (cd chapter6/CI && ansible-runner run --ident my_identifier --process-isolation --container-image ${{ secrets.EE_NAME }} -p nginx-deployment-playbook.yml .)
 
     - name: Check the Ansible runner's result from artifacts/status file
       run: |
