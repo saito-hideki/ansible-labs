@@ -31,7 +31,7 @@ jobs:
 
     - name: Check the Ansible runner's result from artifacts/status file
       run: |
-          RESULT=$(cat artifacts/my_identifier/status)
+          RESULT=$(cd chapter6/CI && cat artifacts/my_identifier/status)
           if [ $RESULT = "successful" ]; then
           echo "Ansible Runner Job status: success"
           exit 0
