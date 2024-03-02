@@ -19,7 +19,7 @@ jobs:
       run: podman login --username  ${{ secrets.QUAY_USERNAME }} --password ${{ secrets.QUAY_PASSWORD }} quay.io
 
     - name: Create Ansible ssh key file
-      run: echo "$SSH_PRIVATE_KEY" > project/ssh-key.pem
+      run: echo "$SSH_PRIVATE_KEY" > chapter6/CI/project/ssh-key.pem
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_KEYFILE }}
 
